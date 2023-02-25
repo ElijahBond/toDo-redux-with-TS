@@ -1,17 +1,10 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
-import todoReducer from 'features/Todo/todoSlice';
-import asyncTodoReducer from 'features/AsyncTodo/asyncTodoSlice';
-
-const rootReducer = combineReducers({
-  todos: todoReducer,
-  asyncTodos: asyncTodoReducer,
-});
+const rootReducer = combineReducers({})
 
 export const store = configureStore({
-  reducer: rootReducer,
+    reducer: rootReducer
 });
 
-// export type RootState = ReturnType<typeof rootReducer>;
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
